@@ -20,14 +20,16 @@ public class DestroyOnTrigger2D : MonoBehaviour
                 Debug.Log("Masked");
                 GameObject maskGameObject = this.gameObject.transform.GetChild(0).gameObject;
                 var maskComponent = maskGameObject.GetComponent<Renderer>();
-                if(maskComponent.enabled){
+                if (maskComponent.enabled)
+                {
                     MaskShooter.score--;
-                    Debug.Log("Already Masked\nPoints:"+MaskShooter.score);
+                    Debug.Log("Already Masked\nPoints:" + MaskShooter.score);
                 }
-                else{
+                else
+                {
                     MaskShooter.score++;
                     maskComponent.enabled = true;
-                    Debug.Log("Masked\nPoints:"+MaskShooter.score);
+                    Debug.Log("Masked\nPoints:" + MaskShooter.score);
                 }
 
                 Destroy(other.gameObject);
